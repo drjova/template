@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Template | JS Toolkit</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="prettify.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+    
+    <!-- Bootstrap core JS -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Include plugins -->
+    <script src="../src/js/template.js"></script>
+    <script src="prettify.js"></script>
+    <style>
+        body{
+          padding: 10px 0!important;
+        }
+    </style>
+    <script type="text/javascript">
+    $(document).ready(function(){
+       prettyPrint();
+       $('#example-1').template({
+                    'first_name':'John',
+                    'last_name':'Doe',
+                    'age':23,
+                    'showMeta':'Show Meta',
+                    'showTable':'Show Table',
+                    'caption':'Caption',
+                    'test': false,
+                    'meta':[
+                        {'key':'1st Key', 'value':'1st Value'},
+                        {'key':'2nd Key', 'value':'2nd Value'},
+                        {'key':'3rd Key', 'value':'3rd Value'},
+                        {'key':'3rd Key', 'value':'3rd Value'},
+                        {'key':'3rd Key', 'value':'3rd Value'},
+                        {'key':'3rd Key', 'value':'3rd Value'},
+                        {'key':'3rd Key', 'value':'3rd Value'},
+                        {'key':'3rd Key', 'value':'3rd Value'},
+                        {'key':'3rd Key', 'value':'3rd Value'},
+                        {'key':'3rd Key', 'value':'3rd Value'},
+                        {'key':'3rd Key', 'value':'3rd Value'},
+                        {'key':'3rd Key', 'value':'3rd Value'},
+                        {'key':'3rd Key', 'value':'3rd Value'},
+                        {'key':'3rd Key', 'value':'3rd Value'},
+                        {'key':'3rd Key', 'value':'3rd Value'},
+                    ],
+                    'other':[
+                       {'name':'Takis','last':'Delivorias'},
+                       {'name':'Sotos','last':'Karolos'},
+                       {'name':'Zozela','last':'Papoulias'},
+                       {'name':'Flash','last':'Orestis'},
+                       {'name':'Niko','last':'TAkis'},
+                       {'name':'Parios','last':'Vasdsds'}
+                    ],
+                });
+$('#example-2').template({
+                    'first_name':'John',
+                    'last_name':'Doe',
+                    'age':23,
+                    'showMeta':'Show Meta',
+                    'showTable':'Show Table',
+                    'caption':'Caption',
+                    'test': false,
+                    'meta':[
+                        {'key':'1st Key', 'value':'1st Value'},
+                        {'key':'2nd Key', 'value':'2nd Value'},
+                        {'key':'3rd Key', 'value':'3rd Value'},
+                        {'key':'3rd Key', 'value':'3rd Value'},
+                        {'key':'3rd Key', 'value':'3rd Value'},
+                        {'key':'3rd Key', 'value':'3rd Value'},
+                        {'key':'3rd Key', 'value':'3rd Value'},
+                        {'key':'3rd Key', 'value':'3rd Value'},
+                        {'key':'3rd Key', 'value':'3rd Value'},
+                        {'key':'3rd Key', 'value':'3rd Value'},
+                        {'key':'3rd Key', 'value':'3rd Value'},
+                        {'key':'3rd Key', 'value':'3rd Value'},
+                        {'key':'3rd Key', 'value':'3rd Value'},
+                        {'key':'3rd Key', 'value':'3rd Value'},
+                        {'key':'3rd Key', 'value':'3rd Value'},
+                    ],
+                    'other':[
+                       {'name':'Takis','last':'Delivorias'},
+                       {'name':'Sotos','last':'Karolos'},
+                       {'name':'Zozela','last':'Papoulias'},
+                       {'name':'Flash','last':'Orestis'},
+                       {'name':'Niko','last':'TAkis'},
+                       {'name':'Parios','last':'Vasdsds'}
+                    ],
+                });
+
+    })
+    </script>
+  </head>
+
+  <body>
+
+   
+
+
+    <div class="container">
+      <div class="row">
+          <div class="col-md-12">
+            <a href="index.html" class="btn btn-primary"><span class="glyphicon glyphicon-chevron-left"></span> Back</a>
+            <div class="page-header">
+                <h1>Template <small>template.js</small>
+            </div>
+            <div id="examples">
+            <h3><code>data-replace</code></h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Data</h4>
+                    <pre class="prettyprint">
+{
+  'first_name':'John',
+  'last_name':'Doe',
+  'age':23,
+  'caption':'Caption'
+}
+                    </pre>
+                </div> <!-- 6-->
+                <div class="col-md-6">
+                    <h4>HTML</h4>
+                    <pre class="prettyprint">&lt;div data-replace=&quot;first_name&quot;&gt;&lt;/div&gt;<br />&lt;div data-replace=&quot;last_name&quot;&gt;&lt;/div&gt;<br />&lt;div data-replace=&quot;age&quot;&gt;&lt;/div&gt;<br />&lt;div data-replace=&quot;caption&quot;&gt;&lt;/div&gt;
+                    </pre>
+                </div> <!-- 6-->
+
+
+            </div>
+             <div class="row">
+                    <div class="col-md-12">
+                    <h4>Results</h4>
+                      <div id="example-1">
+                        <div data-replace="first_name"></div>
+                          <div data-replace="last_name"></div>
+                          <div data-replace="age"></div>
+                          <div data-replace="caption"></div>
+                      </div>
+                    </div>
+                </div> <!-- row -->
+            <hr />
+          <h3><code>data-repeat</code></h3>
+            <div class="row">
+               <div class="col-md-6">
+                    <h4>Data</h4>
+                    <pre class="prettyprint">
+'meta':[
+    {'key':'1st Key', 'value':'1st Value'},
+    {'key':'2nd Key', 'value':'2nd Value'},
+    {'key':'3rd Key', 'value':'3rd Value'},
+    {'key':'3rd Key', 'value':'3rd Value'},
+    {'key':'3rd Key', 'value':'3rd Value'},
+    {'key':'3rd Key', 'value':'3rd Value'},
+    {'key':'3rd Key', 'value':'3rd Value'},
+    {'key':'3rd Key', 'value':'3rd Value'},
+    {'key':'3rd Key', 'value':'3rd Value'},
+    {'key':'3rd Key', 'value':'3rd Value'},
+    {'key':'3rd Key', 'value':'3rd Value'},
+    {'key':'3rd Key', 'value':'3rd Value'},
+    {'key':'3rd Key', 'value':'3rd Value'},
+    {'key':'3rd Key', 'value':'3rd Value'},
+    {'key':'3rd Key', 'value':'3rd Value'},
+]
+                    </pre>
+              </div>
+              <div class="col-md-6">
+                    <h4>HTML</h4>
+                    <pre class="prettyprint">
+&lt;ul data-repeat=&quot;meta&quot;&gt;<br /> &lt;li&gt; <br />  &lt;span data-replace=&quot;key&quot;&gt;&lt;/span&gt;<br />  &lt;span data-replace=&quot;value&quot;&gt;&lt;/span&gt;<br /> &lt;/li&gt; <br/>&lt;/ul&gt;
+                    </pre>
+              </div>
+
+            </div>
+             <div class="row">
+                    <div class="col-md-12">
+                    <h4>Results</h4>
+                      <div id="example-2">
+                        <ul data-repeat="meta">
+                          <li><span data-replace="key"></span>  <span data-replace="value"></span></li>
+                        </ul>
+                      </div>
+                    </div>
+                </div> <!-- row -->
+                <h3><code>data-logic</code></h3>
+                <h3><code>data-toggle</code></h3>
+            </div> 
+          </div> <!-- col-md-12 -->
+      </div> <!-- row -->
+    </div> <!-- /container -->
+  </body>
+</html>

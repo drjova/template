@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>JS Toolkit</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="prettify.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+    
+    <!-- Bootstrap core JS -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Include plugins -->
+     <script src="prettify.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+       prettyPrint();
+    })
+  </script>
+   
+  </head>
+
+  <body data-offset="50" data-spy="scroll" data-target="#navbar-example">
+
+    <!-- Static navbar -->
+    <div id="navbar-example" class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">js-toolkit <small><span class="label label-danger">pre^2 alpha</span></small></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#template">Template</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+
+    <div class="container">
+      <div class="row">
+          <div class="col-md-12">
+          <div id="home">
+            <div class="jumbotron">
+            <h1>JS Toolkit</h1>
+            <p>Yet another javascript toolkit</p>
+          
+            </div>
+          </div>
+              <div id="template">
+                    <div class="page-header">
+                        <h1>Template <small>template.js</small></h1>
+                    </div>
+                    <p class="lead">Let you parse a json object. <a target="_blank" href="template.html">Demo</a></p>
+
+          
+
+                    <h3>Options</h3>
+                    <p>Options can be passed via data attributes <code>data-{name}</code></p>
+   
+                    <table class="table table-bordered table-striped">
+                      <thead>
+                       <tr>
+                         <th style="width: 100px;">Name</th>
+                         <th style="width: 150px;">Type</th>
+                         <th>Markup</th>
+                         <th>Description</th>
+                       </tr>
+                      </thead>
+                      <tbody>
+                       <tr>
+                         <td><code>data-replace</code></td>
+                         <td>string</td>
+                         <td><code>&lt;div data-replace="a key"&gt;&lt;/div&gt;</code></td>
+                         <td>It replace a single json key with its value</td>
+                       </tr>
+                       <tr>
+                         <td><code>data-repeat</code></td>
+                         <td>string</td>
+                         <td>
+                         <code>&lt;ul data-repeat="an array"&gt;</code> <br />
+                         <code>&nbsp;&nbsp;&lt;li&gt;&lt;p data-replace="a key"&gt;&lt;/p&gt;&lt;/li&gt;</code> <br />
+                         <code>&lt;/ul&gt;</code>
+                         </td>
+                         <td>It loops throw a json object and parse the inline template</td>
+                       </tr>
+                       <tr>
+                         <td><code>data-logic</code></td>
+                         <td>string</td>
+                         <td>
+                         <code>&lt;div data-replace="!a key or a key"&gt;</code> <br />
+                         &nbsp;&nbsp;&nbsp;&nbsp;It's empty :(<br />
+                          <code>&nbsp;&nbsp;or</code> <br />
+                          &nbsp;&nbsp;&nbsp;&nbsp; It's not empty :)<br />
+                         <code>&lt;/div&gt;</code>
+                         </td>
+                         <td> Use <code>!</code> if it is <code>false</code> or <code>empty</code> otherwise just the key </td>
+                       </tr>
+                       <tr>
+                         <td><code>data-toggle</code></td>
+                         <td>string</td>
+                         <td>
+                         <code>&lt;a href="#" data-toggle="#test"&gt;Toggle that&lt;/a&gt;</code> <br />
+                          <code>&lt;div id="test"&gt;I will be visible or hidden &lt;/div&gt;</code> 
+                         </td>
+                         <td>a jquery valid selector to bind the element that you want</td>
+                       </tr>
+                      
+                      </tbody>
+                    </table>
+                    <h3>Usage</h3>
+                    <div class="bs-example">
+                        <pre>$(<span class="j">'#test'</span>).template({ <span class="p">'firstname' : 'A firstname',</span><span class="p">'lastname'  : 'A lastname',</span><span class="p">'positions' : [</span><span class="p indent-2">{'title':'A position title', 'year': 'A year'},</span><span class="p indent-2">{'title':'A position title', 'year': 'A year'},</span><span class="p indent-2">{'title':'A position title', 'year': 'A year'},</span><span class="p indent-2">{'title':'A position title', 'year': 'A year'}</span><span class="p">],</span><span class="p">'age' : false</span>})</pre>
+                    </div>
+                    <div class="highlight">
+                      <pre>&lt;div id=<span class="j">"test"</span>&gt;<span class="p">&lt;p <span class="j">data-replace</span>="firstname"&gt;&lt;/p&gt; </span><span class="p">&lt;ul <span class="j">data-repeat</span>="positions"&gt;</span><span class="p indent-2"> &lt;li&gt;&lt;span <span class="j">data-replace</span>="title"&gt;&lt;/span&gt;&lt;/li&gt;</span><span class="p">&lt;/ul&gt;</span><span class="p">&lt;p <span class="j">data-logic</span>="!age"&gt;Guess what no age!&lt;/p&gt;</span>&lt;/div&gt;</pre>
+                    </div>
+              </div> <!-- #template -->
+
+
+
+          </div> <!-- col-md-12 -->
+      </div> <!-- row -->
+    </div> <!-- /container -->
+  </body>
+</html>
