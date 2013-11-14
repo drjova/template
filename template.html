@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Examples</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> 
+        <script src="template.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function(){
+             $('body').template({
+                    'first_name':'Harris',
+                    'last_name':'Tzovanakis',
+                    'age':23,
+                    'showMeta':'Show Meta',
+                    'showTable':'Show Table',
+                    'caption':'Meres me liakada',
+                    'test': false,
+                    'meta':[
+                        {'key':'1st Key', 'value':'1st Value'},
+                        {'key':'2nd Key', 'value':'2nd Value'},
+                        {'key':'3rd Key', 'value':'3rd Value'},
+                        {'key':'3rd Key', 'value':'3rd Value'},
+                        {'key':'3rd Key', 'value':'3rd Value'},
+                        {'key':'3rd Key', 'value':'3rd Value'},
+                        {'key':'3rd Key', 'value':'3rd Value'},
+                        {'key':'3rd Key', 'value':'3rd Value'},
+                        {'key':'3rd Key', 'value':'3rd Value'},
+                        {'key':'3rd Key', 'value':'3rd Value'},
+                        {'key':'3rd Key', 'value':'3rd Value'},
+                        {'key':'3rd Key', 'value':'3rd Value'},
+                        {'key':'3rd Key', 'value':'3rd Value'},
+                        {'key':'3rd Key', 'value':'3rd Value'},
+                        {'key':'3rd Key', 'value':'3rd Value'},
+                    ],
+                    'vagos':[
+                       {'name':'Takis','last':'Delivorias'},
+                       {'name':'Sotos','last':'Karolos'},
+                       {'name':'Zozela','last':'Papoulias'},
+                       {'name':'Flash','last':'Orestis'},
+                       {'name':'Niko','last':'TAkis'},
+                       {'name':'Parios','last':'Vasdsds'}
+                    ],
+                });
+        })
+
+        </script>
+    </head>
+    <body>
+
+                <div data-replace="first_name"></div>
+                <div data-replace="last_name"></div>
+                <div data-replace="age"></div>
+                <div data-replace="title"></div>
+                <a href="javascript:void(0)" data-toggle="#meta" data-replace="showMeta"></a>
+
+                <div id="meta" data-repeat="meta">
+                    <div data-replace="key"></div>
+                    <div data-replace="value"></div>
+                </div>
+
+                <ul data-repeat="vagos">
+                    <li><span data-replace="name"></span> | <span data-replace="last"></span></li>
+                </ul>
+
+                <a href="javascript:void(0)" data-toggle="#table" data-replace="showTable">Show/Hide</a>
+
+                <table border="1" id="table" data-repeat="vagos">
+                    <tr>
+                       <td style="color:green"><div data-replace="name"></div></td>
+                       <td><div data-replace="last"></div></td>
+                     </tr>
+                </table>
+                <div data-logic="!caption">
+                     <div style="color:red" data-replace="caption"></div>
+                </div>
+                <div data-logic="!test">
+                     Sorry, the test is empty
+                </div>
+
+    </body>
+</html>
